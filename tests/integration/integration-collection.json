@@ -1,0 +1,98 @@
+{
+  "info": {
+    "_postman_id": "4122131f-a912-4b6d-bce4-65e1a2160e09",
+    "name": "integration-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "752706"
+  },
+  "item": [
+    {
+      "name": "Create Order",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"orderId\", jsonData.id);",
+              "",
+              "pm.test('success', function() {",
+              "    const responseJson = pm.response.json();",
+              "",
+              "    pm.response.to.have.status(201);",
+              "    pm.response.to.not.be.error;",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "",
+              "    pm.expect(responseJson.id).to.be.a('string');",
+              "    pm.expect(responseJson.productId).to.be.a('string');",
+              "    pm.expect(responseJson.storeId).to.be.a('string');",
+              "    pm.expect(responseJson.quantity).to.be.a('number');",
+              "    pm.expect(responseJson.type).to.eql('Orders');",
+              "    pm.expect(responseJson.type).to.be.a('string');",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"quantity\": 1,\n    \"productId\": \"BHQ65RSD2EQ\",\n    \"storeId\": \"59b8a675-9bb7-46c7-955d-2566edfba8ea\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api-url}}/orders/",
+          "host": ["{{api-url}}/orders"],
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Order",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('success', function() {",
+              "    const responseJson = pm.response.json();",
+              "",
+              "    pm.response.to.have.status(200);",
+              "    pm.response.to.not.be.error;",
+              "    pm.response.to.be.withBody;",
+              "    pm.response.to.be.json;",
+              "",
+              "    pm.expect(responseJson.id).to.be.a('string');",
+              "    pm.expect(responseJson.productId).to.be.a('string');",
+              "    pm.expect(responseJson.storeId).to.be.a('string');",
+              "    pm.expect(responseJson.quantity).to.be.a('number');",
+              "    pm.expect(responseJson.type).to.eql('Orders');",
+              "    pm.expect(responseJson.type).to.be.a('string');",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{api-url}}/orders/{{orderId}}",
+          "host": ["{{api-url}}/orders"],
+          "path": ["{{orderId}}"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

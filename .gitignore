@@ -1,0 +1,3 @@
+.DS_Store
+serverless-pro/coverage/*
+serverless-pro/cdk.context.json

@@ -1,0 +1,6 @@
+{
+  "stage": "featuredev",
+  "domainName": "your-domain.co.uk",
+  "subDomain": "featuredev.your-domain.co.uk",
+  "api": "https://api-featuredev.your-domain.co.uk"
+}

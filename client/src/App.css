@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+.error-item {
+  font-weight: bolder;
+  font-size: x-large;
+  font-weight: bolder;
+  color: #d60000;
+  padding: 1em;
+}

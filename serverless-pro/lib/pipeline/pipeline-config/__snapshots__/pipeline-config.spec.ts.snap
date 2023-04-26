@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pipeline-config should return the correct config for feature-dev 1`] = `
+{
+  "client": {
+    "bucketName": "serverless-pro-client-feature-dev-bucket",
+  },
+  "env": {
+    "account": "123456789123",
+    "region": "eu-west-1",
+  },
+  "shared": {
+    "appConfigLambdaLayerArn": "arn:aws:lambda:eu-west-1:434848589818:layer:AWS-AppConfig-Extension-Arm64:46",
+    "domainCertificateArn": "arn:aws:acm:us-east-1:123456789123:certificate/3c0a6045-j786-iu87-rt45-74e87b1e6099",
+    "domainName": "your-domain.co.uk",
+    "powerToolServiceName": "serverless-pro-orders-service-feature-dev",
+    "powerToolsMetricsNamespace": "ServerlessProFeatureDev",
+  },
+  "stageName": "featureDev",
+  "stateful": {
+    "assetsBucketName": "serverless-pro-feature-dev-canary-bucket",
+    "bucketName": "serverless-pro-feature-dev-bucket",
+  },
+  "stateless": {
+    "canaryNotificationEmail": "your-email@gmail.com",
+    "lambdaMemorySize": 128,
+    "randomErrorsEnabled": "false",
+  },
+}
+`;
+
+exports[`pipeline-config should return the correct config for prod 1`] = `
+{
+  "client": {
+    "bucketName": "serverless-pro-client-prod-bucket",
+  },
+  "env": {
+    "account": "123456789123",
+    "region": "eu-west-1",
+  },
+  "shared": {
+    "appConfigLambdaLayerArn": "arn:aws:lambda:eu-west-1:434848589818:layer:AWS-AppConfig-Extension-Arm64:46",
+    "domainCertificateArn": "arn:aws:acm:us-east-1:123456789123:certificate/3c0a6045-j786-iu87-rt45-74e87b1e6099",
+    "domainName": "your-domain.co.uk",
+    "powerToolServiceName": "serverless-pro-orders-service-prod",
+    "powerToolsMetricsNamespace": "ServerlessProProd",
+  },
+  "stageName": "prod",
+  "stateful": {
+    "assetsBucketName": "serverless-pro-prod-canary-bucket",
+    "bucketName": "serverless-pro-prod-bucket",
+  },
+  "stateless": {
+    "canaryNotificationEmail": "your-email@gmail.com",
+    "lambdaMemorySize": 1024,
+    "randomErrorsEnabled": "false",
+  },
+}
+`;
+
+exports[`pipeline-config should return the correct config for staging 1`] = `
+{
+  "client": {
+    "bucketName": "serverless-pro-client-staging-bucket",
+  },
+  "env": {
+    "account": "123456789123",
+    "region": "eu-west-1",
+  },
+  "shared": {
+    "appConfigLambdaLayerArn": "arn:aws:lambda:eu-west-1:434848589818:layer:AWS-AppConfig-Extension-Arm64:46",
+    "domainCertificateArn": "arn:aws:acm:us-east-1:123456789123:certificate/3c0a6045-j786-iu87-rt45-74e87b1e6099",
+    "domainName": "your-domain.co.uk",
+    "powerToolServiceName": "serverless-pro-orders-service-staging",
+    "powerToolsMetricsNamespace": "ServerlessProStaging",
+  },
+  "stageName": "staging",
+  "stateful": {
+    "assetsBucketName": "serverless-pro-staging-canary-bucket",
+    "bucketName": "serverless-pro-staging-bucket",
+  },
+  "stateless": {
+    "canaryNotificationEmail": "your-email@gmail.com",
+    "lambdaMemorySize": 1024,
+    "randomErrorsEnabled": "false",
+  },
+}
+`;

@@ -1,0 +1,68 @@
+config:
+  plugins:
+    expect: {} # this plugin allows for assertions: https://artillery.io/docs/guides/plugins/plugin-expectations-assertions.html
+    ensure: {}
+  ensure:
+    thresholds:
+      - http.response_time.p95: 2000
+    conditions:
+      - expression: http.response_time.p99 < 1500
+        strict: true
+      - expression: http.response_time.p95 < 2000
+        strict: true
+    maxErrorRate: 0 # no percentage of error rate i.e. no errors or pipeline fails
+  payload:
+    path: "./data/data.csv" # pull in the order data csv
+    fields:
+      - "productId"
+      - "quantity"
+      - "storeId"
+    order: sequence # this can be random or sequence
+    skipHeader: true # skip header as this has the column headers
+    delimeter: ","
+    cast: true
+    skipEmptyLines: true
+  environments:
+    # load testing below
+    load:
+      target: "https://{{ $processEnvironment.API_ENDPOINT }}"
+      phases:
+        - duration: 20
+          arrivalRate: 1
+          maxVusers: 1
+scenarios:
+  - flow:
+      - log: "New virtual user running for env https://{{ $processEnvironment.API_ENDPOINT }}" # you can log using the following example
+      # create the order and assert the response
+      - post:
+          url: "/orders"
+          json:
+            productId: "{{ productId }}"
+            quantity: "{{ quantity }}"
+            storeId: "{{ storeId }}"
+          capture:
+            - json: "$.id"
+              as: id
+          expect:
+            - statusCode: 201 # ensure the correct status code is returned
+            - contentType: application/json # ensure that the correct contentType is returned
+            - hasHeader: "content-type" # ensure it has the correct headers returned
+            - hasProperty: id # ensure that all of the properties are present on the response
+            - hasProperty: productId
+            - hasProperty: quantity
+            - hasProperty: created
+            - hasProperty: storeId
+            - hasProperty: type
+      # get the order which has just been created and assert the response
+      - get:
+          url: "/orders/{{ id }}"
+          expect:
+            - statusCode: 200
+            - contentType: application/json
+            - hasHeader: "content-type"
+            - hasProperty: id # ensure that all of the properties are present on the response
+            - hasProperty: productId
+            - hasProperty: quantity
+            - hasProperty: created
+            - hasProperty: storeId
+            - hasProperty: type

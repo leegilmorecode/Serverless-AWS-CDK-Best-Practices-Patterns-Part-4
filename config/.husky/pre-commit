@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# build the client before the synth
+cd ./client/ && npm run precommit
+cd ../serverless-pro/ && npm run precommit

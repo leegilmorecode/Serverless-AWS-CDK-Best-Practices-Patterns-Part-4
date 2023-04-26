@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`feature flag configuration develop stage i.e. ephemeral should match the snapshot 1`] = `
+{
+  "flags": {
+    "createOrderAllowList": {
+      "attributes": {
+        "allow": {
+          "constraints": {
+            "enum": [
+              "beta-group",
+              "qa",
+            ],
+            "required": true,
+            "type": "string",
+          },
+        },
+      },
+      "description": "When enabled it limits the allow list to a select set of groups",
+      "name": "createOrderAllowList",
+    },
+    "opsLimitListOrdersResults": {
+      "attributes": {
+        "limit": {
+          "constraints": {
+            "required": true,
+            "type": "number",
+          },
+        },
+      },
+      "description": "Operation toggle to limit the results on list orders",
+      "name": "opsLimitListOrdersResults",
+    },
+    "opsPreventCreateOrders": {
+      "description": "Operational toggle to prevent the creation of new orders",
+      "name": "opsPreventCreateOrders",
+    },
+    "releaseCheckCreateOrderQuantity": {
+      "_deprecation": {
+        "status": "planned",
+      },
+      "attributes": {
+        "limit": {
+          "constraints": {
+            "required": true,
+            "type": "number",
+          },
+        },
+      },
+      "description": "A release flag for the create order check on max quantity",
+      "name": "releaseCheckCreateOrderQuantity",
+    },
+  },
+  "values": {
+    "createOrderAllowList": {
+      "allow": "qa",
+      "enabled": false,
+    },
+    "opsLimitListOrdersResults": {
+      "enabled": true,
+      "limit": 10,
+    },
+    "opsPreventCreateOrders": {
+      "enabled": false,
+    },
+    "releaseCheckCreateOrderQuantity": {
+      "enabled": true,
+      "limit": 10,
+    },
+  },
+  "version": "1",
+}
+`;
+
+exports[`feature flag configuration featureDev stage should match the snapshot 1`] = `
+{
+  "flags": {
+    "createOrderAllowList": {
+      "attributes": {
+        "allow": {
+          "constraints": {
+            "enum": [
+              "beta-group",
+              "qa",
+            ],
+            "required": true,
+            "type": "string",
+          },
+        },
+      },
+      "description": "when enabled it limits the allow list to a select set of groups",
+      "name": "createOrderAllowList",
+    },
+    "opsLimitListOrdersResults": {
+      "attributes": {
+        "limit": {
+          "constraints": {
+            "required": true,
+            "type": "number",
+          },
+        },
+      },
+      "description": "Operation toggle to limit the results on list orders",
+      "name": "opsLimitListOrdersResults",
+    },
+    "opsPreventCreateOrders": {
+      "description": "Operational toggle to prevent the creation of new orders",
+      "name": "opsPreventCreateOrders",
+    },
+    "releaseCheckCreateOrderQuantity": {
+      "_deprecation": {
+        "status": "planned",
+      },
+      "attributes": {
+        "limit": {
+          "constraints": {
+            "required": true,
+            "type": "number",
+          },
+        },
+      },
+      "description": "A release flag for the create order check on max quantity",
+      "name": "releaseCheckCreateOrderQuantity",
+    },
+  },
+  "values": {
+    "createOrderAllowList": {
+      "allow": "qa",
+      "enabled": false,
+    },
+    "opsLimitListOrdersResults": {
+      "enabled": true,
+      "limit": 1000,
+    },
+    "opsPreventCreateOrders": {
+      "enabled": false,
+    },
+    "releaseCheckCreateOrderQuantity": {
+      "enabled": true,
+      "limit": 1000,
+    },
+  },
+  "version": "1",
+}
+`;
+
+exports[`feature flag configuration prod stage should match the snapshot 1`] = `
+{
+  "flags": {
+    "createOrderAllowList": {
+      "attributes": {
+        "allow": {
+          "constraints": {
+            "enum": [
+              "beta-group",
+              "qa",
+            ],
+            "required": true,
+            "type": "string",
+          },
+        },
+      },
+      "description": "when enabled it limits the allow list to a select set of groups",
+      "name": "createOrderAllowList",
+    },
+    "opsLimitListOrdersResults": {
+      "attributes": {
+        "limit": {
+          "constraints": {
+            "required": true,
+            "type": "number",
+          },
+        },
+      },
+      "description": "Operation toggle to limit the results on list orders",
+      "name": "opsLimitListOrdersResults",
+    },
+    "opsPreventCreateOrders": {
+      "description": "Operational toggle to prevent the creation of new orders",
+      "name": "opsPreventCreateOrders",
+    },
+    "releaseCheckCreateOrderQuantity": {
+      "_deprecation": {
+        "status": "planned",
+      },
+      "attributes": {
+        "limit": {
+          "constraints": {
+            "required": true,
+            "type": "number",
+          },
+        },
+      },
+      "description": "A release flag for the create order check on max quantity",
+      "name": "releaseCheckCreateOrderQuantity",
+    },
+  },
+  "values": {
+    "createOrderAllowList": {
+      "allow": "qa",
+      "enabled": false,
+    },
+    "opsLimitListOrdersResults": {
+      "enabled": false,
+      "limit": 1000,
+    },
+    "opsPreventCreateOrders": {
+      "enabled": false,
+    },
+    "releaseCheckCreateOrderQuantity": {
+      "enabled": false,
+      "limit": 1000,
+    },
+  },
+  "version": "1",
+}
+`;
+
+exports[`feature flag configuration staging stage should match the snapshot 1`] = `
+{
+  "flags": {
+    "createOrderAllowList": {
+      "attributes": {
+        "allow": {
+          "constraints": {
+            "enum": [
+              "beta-group",
+              "qa",
+            ],
+            "required": true,
+            "type": "string",
+          },
+        },
+      },
+      "description": "when enabled it limits the allow list to a select set of groups",
+      "name": "createOrderAllowList",
+    },
+    "opsLimitListOrdersResults": {
+      "attributes": {
+        "limit": {
+          "constraints": {
+            "required": true,
+            "type": "number",
+          },
+        },
+      },
+      "description": "Operation toggle to limit the results on list orders",
+      "name": "opsLimitListOrdersResults",
+    },
+    "opsPreventCreateOrders": {
+      "description": "Operational toggle to prevent the creation of new orders",
+      "name": "opsPreventCreateOrders",
+    },
+    "releaseCheckCreateOrderQuantity": {
+      "_deprecation": {
+        "status": "planned",
+      },
+      "attributes": {
+        "limit": {
+          "constraints": {
+            "required": true,
+            "type": "number",
+          },
+        },
+      },
+      "description": "A release flag for the create order check on max quantity",
+      "name": "releaseCheckCreateOrderQuantity",
+    },
+  },
+  "values": {
+    "createOrderAllowList": {
+      "allow": "qa",
+      "enabled": true,
+    },
+    "opsLimitListOrdersResults": {
+      "enabled": true,
+      "limit": 1000,
+    },
+    "opsPreventCreateOrders": {
+      "enabled": false,
+    },
+    "releaseCheckCreateOrderQuantity": {
+      "enabled": true,
+      "limit": 1000,
+    },
+  },
+  "version": "1",
+}
+`;
