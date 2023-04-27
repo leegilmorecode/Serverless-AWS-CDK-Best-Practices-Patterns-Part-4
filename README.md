@@ -6,7 +6,7 @@ An example of creating immutable builds using the AWS CDK and progressing them t
 
 Part 4 of the article can be found here:
 
-https://github.com/leegilmorecode/Serverless-AWS-CDK-Best-Practices-Patterns-Part-4
+https://blog.serverlessadvocate.com/serverless-aws-cdk-pipeline-best-practices-patterns-part-4-38205c85a18b
 
 This part (Part 4) covers:
 
